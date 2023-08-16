@@ -2,7 +2,53 @@
 
 ## 📝 Your Notes
 
-Elaborate on your learnings here in `INSTRUCTIONS.md`
+- `The React component should only have one parent element`:
+    <details>
+    <summary><b>Example, when trying to create a React component with two &lt;div&gt;/ 'parent' elements:</b></summary>
+
+  ```js
+  function App() {
+    return (
+      <div>
+        <h1>Hello</h1>
+      </div>
+      <div>
+        <h2>Hello again</h2>
+      </div>
+    )
+  }
+  ```
+
+  **The error in the editor:**
+
+  ![The screenshot of an error in the editor that says: "JSX expressions must have one parent element."](docs/screenshots/jsx_error_in_editor.png)
+
+  **The error in the browser:**
+
+  ![The screenshot of an error in the browser, that indicates the affected file and specifies line in that file where the issue appears: "src/index.exercise.jsx => Line 15:4:  Parsing error: Adjacent JSX elements must be wrapped in an enclosing tag. Did you want a JSX fragment <>...</>?"](docs/screenshots/jsx_error_in_the_browser.png)
+
+    </details>
+  <br>
+    <details>
+    <summary><b>Example, when creating a React component the correct way:</b></summary>
+
+  1. Either use another &lt;`div`&gt; (or any other semantically appropriate
+     element) as a parent one:
+
+     ![Screenshot of a code example, where one div element is used as a parent to wrap another two div elements.](docs/screenshots/div_as_parent-2.png)
+
+  2. Or use a JSX fragment `<>...</>` to wrap the two &lt;`div`&gt;'s:
+
+     ![Screenshot of a code example, where the JSX fragment "<>...</>" is used as a parent to wrap the two div elements.](docs/screenshots/jsx_fragment-1.png)
+
+  **No errors in the browser:**
+
+  ![A screenshot of a browser window, where the main heading says "Hello" and sub-heading says "Hello again"](docs/screenshots/no_jsx_error_in_the_browser.png)
+  </details>
+
+  ✅ Note that when using the JSX fragment it will not add any additional
+  element to the HTML document, while using any other element as a parent one -
+  they will be rendered.
 
 ## Background
 
